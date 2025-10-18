@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine & Flip Flops</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-container">
+    <img src="logo-transparent-2.png" alt="Sunshine & Flip Flops Logo" class="headlogo">
+    <nav>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul class="nav-list" id="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#specialties">Specialties</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#call">Book a Call</a></li>
+        </ul>
+    </nav>      
+    </div>
+</header>
+
+<section id="home" class="hero-section">
+    <div class="hero-overlay">
+    <h1>Your Vacation Starts Here</h1>
+    <p></p>
+    <a href="#call" class="button">Schedule Your Trip</a>
+    </div>
+</section>
+
+<main class="main-content">
+    <section id="about" class="section dark-section animate-scroll">
+    <h2>About Us</h2>
+    <p>
+        I’m Mary Augustine, founder of Sunshine & Flip Flops. I enjoy helping families, couples, and friends build memories in the most magical places on Earth. From personalized Disney itineraries to luxurious Caribbean resorts and breathtaking cruises, I plan every detail with care.
+    </p>
+    </section>
+
+    <section id="specialties" class="section light-section animate-scroll">
+    <h2>What We Specialize In</h2>
+    <p>
+        My passion lies in creating unforgettable getaways. These are our main focuses:
+    </p>
+    <ul class="specialty-list">
+        <li>✨ Disney Parks & Resorts</li>
+        <li>🌎 Universal Studios & Resorts </li>
+        <li>🏝️ Caribbean Islands</li>
+        <li>🚢 Cruises to anywhere and everywhere</li>
+        <li>🌞 All-Inclusive Resorts</li>
+    </ul>
+    </section>
+
+    <section id="gallery" class="section dark-section animate-scroll">
+    <h2>Trip Highlights</h2>
+    <p>Here are just a few snapshots from adventures I’ve helped plan and experienced firsthand:</p>
+    <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track-container">
+        <ul class="carousel-track">
+            <li class="carousel-slide"><img src="gallery1.jpg" alt="Trip 1"></li>
+            <li class="carousel-slide"><img src="gallery9.jpg" alt="Bermuda"></li>
+            <li class="carousel-slide"><img src="gallery2.jpg" alt="Trip 2"></li>
+            <li class="carousel-slide"><img src="gallery11.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery3.jpg" alt="Trip 3"></li>
+            <li class="carousel-slide"><img src="gallery4.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery5.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery6.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery7.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery8.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="gallery10.jpg" alt="Trip 4"></li>
+        </ul>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+    </section>
+
+    <section id="call" class="section light-section animate-scroll">
+        <h2>Book a Free Call</h2>
+        <p>Let’s plan the perfect escape—together. No pressure. Just fun, easy travel planning.</p>
+        <div id="booking-button"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    &copy; <span id="year"></span> Sunshine & Flip Flops — All rights reserved. California SOT #2158353-50 | Florida SOT Ref. #ST44927
+</footer>
+
+<div class="affiliate-wrapper">
+    <img src="AFFILIATE.png" alt="Authorized Cornerstone Affiliate" class="affiliate-badge">
+</div>
+
+<!-- Scroll Animations + Carousel Script -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        }
+    });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-scroll').forEach(section => {
+    observer.observe(section);
+    });
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-btn.next');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    window.addEventListener('load', updateCarousel);
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+
+    hamburger.addEventListener('click', () => {
+    navList.classList.toggle('show');
+    });
+</script>
+
+<!-- GOOGLE API -->
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+window.addEventListener('load', function () {
+    calendar.schedulingButton.load({
+    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ecaE6x5KLj8a-TO4RE1esq7sntgDHN6293GE9zaqQxcy9SUczfGgGkHkxiQsgH_l5LSEsrkB_?gv=true',
+    color: '#facc15',
+    label: 'Book Now',
+    target: document.getElementById('booking-button'),
+    });
+});
+</script>
+</body>
+</html>
