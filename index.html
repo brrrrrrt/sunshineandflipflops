@@ -35,28 +35,32 @@
 
 <main class="main-content">
     <section id="about" class="section dark-section animate-scroll">
-    <h2>About Us</h2>
+    <h2>About Me</h2>
     <p>
-        I’m Mary Augustine, founder of Sunshine & Flip Flops. I enjoy helping families, couples, and friends build memories in the most magical places on Earth. From personalized Disney itineraries to luxurious Caribbean resorts and breathtaking cruises, I plan every detail with care.
+        I am a Registered Nurse at a local hospital. This unique perspective is the bedrock of my philosophy: I've learned that life’s most precious luxury isn't a possession; it's time. 
+My nursing career has given me a joyful perspective on life's timing. It confirms an essential, life-affirming truth: the "bucket list" isn't a someday luxury—it is our vital calling to embrace happiness and adventure now. It's a wonderful invitation to fully engage with all the wonder and joy life has to offer while we have the chance.
+The journeys I design offer exceptional experiences where meticulous care meets sophisticated luxury. The singular mission at Sunshine & Flip Flops is to help you transform fleeting moments into vibrant, lasting memories.
+Every aspect of your escape is crafted with careful attention, ensuring peace of mind from the moment you inquire until you return home.
+Time is the ultimate luxury. Don't just travel—live.
     </p>
     </section>
 
     <section id="specialties" class="section light-section animate-scroll">
-    <h2>What We Specialize In</h2>
+    <h2>What I Specialize In</h2>
     <p>
-        My passion lies in creating unforgettable getaways. These are our main focuses:
+        As a travel agent, my specialities go deeper than just planning your next vacation, rather assisting you in the creation of an unforgettable experience. Here are some of my specialties:
     </p>
     <ul class="specialty-list">
         <li>💎 All-Inclusive Escapes:</li>
-        <li>Effortless Luxury: Discover sanctuaries of indulgence where impeccable service anticipates your every need.</li>
+        <li class="sub-info">Effortless Luxury: Discover sanctuaries of indulgence where impeccable service anticipates your every need.</li>
         <li>✨ Premier Park & Resort Adventures:</li>
-        <li>Stress-Free Enchantment: Curated itineraries for Walt Disney World (including all resorts and Disney Cruise Line), Universal Studios, Aulani, A Disney Resort & Spa in Hawaii, and other premier resort properties.</li>
+        <li class="sub-info">Stress-Free Enchantment: Curated itineraries for Walt Disney World (including all resorts and Disney Cruise Line), Universal Studios, Aulani, A Disney Resort & Spa in Hawaii, and other premier resort properties.</li>
         <li>🏝️ Luxurious Caribbean Sanctuaries:</li>
-        <li>Sun-Drenched Tranquility: Exclusive access to the finest resorts across the Caribbean.</li>
+        <li class="sub-info">Sun-Drenched Tranquility: Exclusive access to the finest resorts across the Caribbean.</li>
         <li>🧘‍♀️ Wellness & Rejuvenation Retreats:</li>
-        <li>Restore Your Balance: Luxurious sanctuaries focused on spa treatments, mindful practices, and holistic relaxation.</li>
+        <li class="sub-info">Restore Your Balance: Luxurious sanctuaries focused on spa treatments, mindful practices, and holistic relaxation.</li>
         <li>🚢 Breathtaking Global Voyages:</li>
-        <li>Explore the World by Sea: Seamlessly orchestrated global cruises, from serene river journeys to spectacular majestic coastlines.</li>
+        <li class="sub-info">Explore the World by Sea: Seamlessly orchestrated global cruises, from serene river journeys to spectacular majestic coastlines.</li>
     </ul>
     </section>
 
@@ -67,17 +71,21 @@
         <button class="carousel-btn prev">&#10094;</button>
         <div class="carousel-track-container">
         <ul class="carousel-track">
-            <li class="carousel-slide"><img src="photos/gallery1.jpg" alt="Trip 1"></li>
+            <li class="carousel-slide"><img src="photos/gallery12.jpeg" alt="Bermuda Cruise"></li>
+            <li class="carousel-slide"><img src="photos/gallery1.jpg" alt="Wedding Vacation"></li>
             <li class="carousel-slide"><img src="photos/gallery9.jpg" alt="Bermuda"></li>
-            <li class="carousel-slide"><img src="photos/gallery2.jpg" alt="Trip 2"></li>
-            <li class="carousel-slide"><img src="photos/gallery11.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery3.jpg" alt="Trip 3"></li>
-            <li class="carousel-slide"><img src="photos/gallery4.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery5.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery6.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery7.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery8.jpg" alt="Trip 4"></li>
-            <li class="carousel-slide"><img src="photos/gallery10.jpg" alt="Trip 4"></li>
+            <li class="carousel-slide"><img src="photos/gallery2.jpg" alt="Florida Beach"></li>
+            <li class="carousel-slide"><img src="photos/gallery11.jpg" alt="Bahamas"></li>
+            <li class="carousel-slide"><img src="photos/gallery13.jpeg" alt="Bermuda Pink Sand Beach"></li>
+            <li class="carousel-slide"><img src="photos/gallery3.jpg" alt="Walt Disney"></li>
+            <li class="carousel-slide"><img src="photos/gallery4.jpg" alt="Disney Epcot"></li>
+            <li class="carousel-slide"><img src="photos/gallery5.jpg" alt="Mountains"></li>
+            <li class="carousel-slide"><img src="photos/gallery14.jpeg" alt="Bermuda Sky"></li>
+            <li class="carousel-slide"><img src="photos/gallery6.jpg" alt="Riding Horses on the Beach"></li>
+            <li class="carousel-slide"><img src="photos/gallery7.jpg" alt="Parasailing Florida"></li>
+            <li class="carousel-slide"><img src="photos/gallery15.JPG" alt="Cruise Sunset"></li>
+            <li class="carousel-slide"><img src="photos/gallery8.jpg" alt="All-Inclusive Hammock"></li>
+            <li class="carousel-slide"><img src="photos/gallery10.jpg" alt="Disney Animal Kingdom"></li>
         </ul>
         </div>
         <button class="carousel-btn next">&#10095;</button>
@@ -101,50 +109,63 @@
 
 <!-- Scroll Animations + Carousel Script -->
 <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Scroll animation
     const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        }
-    });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate-scroll').forEach(section => {
-    observer.observe(section);
+        observer.observe(section);
     });
 
+    // Carousel logic
+    const carousel = document.querySelector('.carousel');
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
     let currentSlide = 0;
 
-    function updateCarousel() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-    }
+function updateCarousel() {
+    track.style.transform = `translateX(-${100 * currentSlide}%)`;
+}
+
 
     nextButton.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+        carousel.classList.add('expanded'); // expand on arrow click
     });
 
     prevButton.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel();
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+        carousel.classList.add('expanded'); // expand on arrow click
     });
 
     window.addEventListener('resize', updateCarousel);
     window.addEventListener('load', updateCarousel);
+
+    // Click outside carousel to collapse it
+    document.addEventListener('click', (e) => {
+        if (!carousel.contains(e.target)) {
+            carousel.classList.remove('expanded');
+        }
+    });
 
     // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
 
     hamburger.addEventListener('click', () => {
-    navList.classList.toggle('show');
+        navList.classList.toggle('show');
     });
 </script>
 

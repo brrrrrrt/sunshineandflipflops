@@ -184,8 +184,14 @@ img {
     list-style: none;
     padding: 0;
     font-size: 1.1rem;
-    color: #10b981;
+    color: #10b981; /* default color for all items */
 }
+
+/* only the descriptive lines */
+.specialty-list li.sub-info {
+    color: #18684d;
+}
+
 
 .specialty-list li {
     margin-bottom: 0.75rem;
@@ -246,6 +252,59 @@ img {
 .carousel-btn.next {
     right: 10px;
 }  
+
+/* Gallery */
+.carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 3rem auto 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* when expanded, just give it a little "pop" */
+.carousel.expanded {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* remove bullets & lay slides out in a row */
+.carousel-track {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* each slide takes 100% of the width and centers its image */
+.carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* default image look */
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* nice crop for hero feel */
+    transition: max-height 0.3s ease, object-fit 0.3s ease;
+}
+
+/* when expanded, show as much of the full image as possible */
+.carousel.expanded .carousel-slide img {
+    max-height: 520px;
+    object-fit: contain; /* whole photo visible */
+}
 
 /* Footer */
 .site-footer {
