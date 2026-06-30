@@ -1,0 +1,14 @@
+# OS junk
+.DS_Store
+
+# Local archive bundle (large, not for repo)
+*.zip
+
+# Dependencies / build output (for future redesign stack)
+node_modules/
+dist/
+build/
+.vite/
+.next/
+.env
+.env.local
