@@ -1,3 +1,5 @@
+import { SITE } from '@/lib/site';
+
 const MARQUEE = [
   'Caribbean Sanctuaries',
   'Walt Disney World',
@@ -47,7 +49,11 @@ export default function Hero() {
           meaning to take, planned start to finish so all you have to do is show up.
         </p>
         <div className="hero-actions">
-          <a href="#book" className="btn btn-primary">
+          <a
+            href={SITE.bookingUrl || '#book'}
+            {...(SITE.bookingUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="btn btn-primary"
+          >
             Schedule your trip <span className="arrow">→</span>
           </a>
           <a href="#specialties" className="btn btn-ghost">
