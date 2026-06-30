@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { SITE } from '@/lib/site';
 
 interface NavLink {
   href: string;
@@ -63,7 +64,12 @@ export default function Header({ home = true }: { home?: boolean }) {
           ))}
         </nav>
 
-        <a href={p('#book')} className="btn btn-primary" style={{ marginLeft: 'auto' }}>
+        <a
+          href={SITE.bookingUrl || p('#book')}
+          {...(SITE.bookingUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="btn btn-primary"
+          style={{ marginLeft: 'auto' }}
+        >
           Book a Call <span className="arrow">→</span>
         </a>
 
@@ -99,7 +105,12 @@ export default function Header({ home = true }: { home?: boolean }) {
               <span className="arrow">→</span>
             </a>
           ))}
-          <a href={p('#book')} className="btn btn-primary m-cta" onClick={() => setOpen(false)}>
+          <a
+            href={SITE.bookingUrl || p('#book')}
+            {...(SITE.bookingUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="btn btn-primary m-cta"
+            onClick={() => setOpen(false)}
+          >
             Book a Call <span className="arrow">→</span>
           </a>
         </div>

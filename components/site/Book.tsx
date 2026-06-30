@@ -1,5 +1,9 @@
 import { SITE } from '@/lib/site';
-import BookCall from './BookCall';
+
+const bookingHref = SITE.bookingUrl || '#contact';
+const ext = SITE.bookingUrl
+  ? { target: '_blank' as const, rel: 'noopener noreferrer' }
+  : {};
 
 export default function Book() {
   return (
@@ -16,15 +20,13 @@ export default function Book() {
           what you&apos;re dreaming of, I&apos;ll take it from there.
         </p>
         <div className="book-actions">
-          <a href={SITE.phoneHref} className="btn btn-primary">
+          <a href={bookingHref} {...ext} className="btn btn-primary">
             Book a free call <span className="arrow">→</span>
           </a>
-          <a href={`mailto:${SITE.email}`} className="btn btn-outline">
+          <a href="#contact" className="btn btn-outline">
             Send a quick note
           </a>
         </div>
-
-        <BookCall />
 
         <div className="book-contact">
           <a href={SITE.phoneHref}>
