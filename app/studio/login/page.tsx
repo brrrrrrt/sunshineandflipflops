@@ -1,11 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
 export default function LoginPage() {
   const router = useRouter();
+
+  // Already signed in? Skip the login screen.
+  useEffect(() => {
+    const sb = createClient();
+    sb.auth.getSession().then(({ data }) => {
+      if (data.session) router.replace('/studio');
+    });
+  }, [router]);
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
