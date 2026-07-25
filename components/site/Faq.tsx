@@ -5,11 +5,7 @@ import { useState } from 'react';
 const FAQS = [
   {
     q: 'How much does it cost to work with you?',
-    a: "For most leisure trips (Caribbean, Disney, all-inclusive, cruises) my services are complimentary. I'm compensated by the resorts and cruise lines I book through, at no extra cost to you. For complex custom itineraries (multi-country, private guides, special-occasion logistics) I charge a flat planning fee, quoted before we start.",
-  },
-  {
-    q: "Can you really get a better price than I'd find online?",
-    a: "Often yes, I have access to advisor-only promotions, resort credits, room upgrades, and stacked perks that don't show up on public booking sites. And if a price drops between your booking and your trip, I'll rebook it for you.",
+    a: "Using a travel advisor costs you nothing extra. For most leisure trips (Caribbean, Disney, all-inclusive, cruises) my services are completely complimentary — I'm compensated directly by the resorts and cruise lines I book through, at no added cost to you, and often the price is the same or better than booking it yourself. For complex custom itineraries (multi-country, private guides, special-occasion logistics) I charge a flat planning fee, quoted upfront before we start.",
   },
   {
     q: 'What happens after I book a call?',
